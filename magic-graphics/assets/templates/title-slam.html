@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Title slam</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #fit { position: fixed; top: 50%; left: 50%; width: 1080px; height: 1920px; transform-origin: center; }
+  #shake { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+  .word { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; font-size: 170px; line-height: 0.98;
+          letter-spacing: 2px; text-transform: uppercase; will-change: transform, opacity; }
+</style>
+</head>
+<body>
+<div id="fit"><div id="shake"></div></div>
+<script>
+// ====== EDIT THESE ======
+const WORDS = ["PACKED", "WITH", "PURPOSE"];  // each word slams in on the beat
+const GOLD_WORD = 2;        // which word is gold (0 = first). -1 = none
+const GOLD = "#F2C94C";     // accent color
+const BG   = "#000000";     // background
+// =========================
+
+document.body.style.background = BG;
+const fitEl = document.getElementById('fit'), shake = document.getElementById('shake');
+fitEl.style.background = BG;
+WORDS.forEach((w, i) => {
+  const d = document.createElement('div'); d.className = 'word'; d.textContent = w;
+  d.style.color = (i === GOLD_WORD) ? GOLD : '#fff';
+  if (i === GOLD_WORD) d.style.textShadow = '0 0 50px ' + GOLD + '88';
+  shake.appendChild(d);
+});
+const words = [...document.querySelectorAll('.word')];
+function fit(){ fitEl.style.transform = 'translate(-50%,-50%) scale(' + Math.min(innerWidth/1080, innerHeight/1920) + ')'; }
+addEventListener('resize', fit); fit();
+
+const GAP = 750, HOLD = 1000, CYCLE = WORDS.length*GAP + HOLD;
+const HITS = WORDS.map((_, i) => 300 + i*GAP);
+let start = performance.now(); const easeOut = t => 1 - Math.pow(1-t,3);
+function frame(now){
+  const t = (now-start)%CYCLE; let amp = 0;
+  words.forEach((w,i) => {
+    const local = t - HITS[i];
+    if (local < 0){ w.style.opacity = 0; w.style.transform = 'scale(2.3)'; return; }
+    const e = easeOut(Math.min(1, local/150));
+    w.style.opacity = Math.min(1, local/70);
+    w.style.transform = 'scale(' + (2.3 - 1.3*e) + ')';
+    if (local < 200) amp = Math.max(amp, (1 - local/200)*26);
+  });
+  shake.style.transform = 'translate(' + (Math.random()-0.5)*amp + 'px,' + (Math.random()-0.5)*amp + 'px)';
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

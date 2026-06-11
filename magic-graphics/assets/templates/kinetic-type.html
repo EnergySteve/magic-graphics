@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Kinetic type</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #fit { position: fixed; top: 50%; left: 50%; width: 1080px; height: 1920px; transform-origin: center;
+         display: flex; align-items: center; justify-content: center; }
+  #word { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; font-size: 200px; color: #fff;
+          letter-spacing: -2px; text-align: center; will-change: filter, opacity, transform; max-width: 1000px; }
+</style>
+</head>
+<body>
+<div id="fit"><div id="word"></div></div>
+<script>
+// ====== EDIT THESE ======
+const WORDS = ["leap.", "before.", "you're.", "ready."]; // shown one at a time; LAST word glows
+const GOLD  = "#F2C94C";   // glow color for the final word
+const BG    = "#000000";   // background
+// =========================
+
+document.body.style.background = BG;
+const fitEl = document.getElementById('fit'), el = document.getElementById('word');
+fitEl.style.background = BG;
+function fit(){ fitEl.style.transform = 'translate(-50%,-50%) scale(' + Math.min(innerWidth/1080, innerHeight/1920) + ')'; }
+addEventListener('resize', fit); fit();
+
+const STEP = 720, LAST_HOLD = 1500, CYCLE = STEP*WORDS.length + LAST_HOLD;
+let start = performance.now();
+function frame(now){
+  const t = (now-start)%CYCLE;
+  const idx = Math.min(WORDS.length-1, Math.floor(t/STEP));
+  const local = t - idx*STEP, isLast = idx === WORDS.length-1;
+  if (el.textContent !== WORDS[idx]) el.textContent = WORDS[idx];
+  el.style.color = isLast ? GOLD : '#fff';
+  const inP = Math.min(1, local/260);
+  let opacity = Math.min(1, local/140), scale = 0.86 + 0.14*inP, blur = (1-inP)*26;
+  if (!isLast && local > STEP-120){ const o=(local-(STEP-120))/120; opacity=1-o; scale=1+o*0.06; }
+  if (isLast){ const g=0.5+0.5*Math.sin(now/240); el.style.textShadow='0 0 '+(40+40*g)+'px '+GOLD+'cc'; }
+  else el.style.textShadow = 'none';
+  el.style.filter = 'blur(' + blur + 'px)'; el.style.opacity = opacity; el.style.transform = 'scale(' + scale + ')';
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
