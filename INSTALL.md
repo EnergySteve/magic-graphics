@@ -10,20 +10,16 @@ files on your computer, you're good.
 
 Open Claude and paste this:
 
-> **Set up the Magic Graphics skill for me: download it from https://github.com/EnergySteve/magic-graphics and copy the `magic-graphics` folder (the one with `SKILL.md` inside) into my Claude skills folder at `~/.claude/skills/`. Then make me a quick test clip so I know it's working.**
+> **Install the Magic Graphics skill for me: download it from https://github.com/EnergySteve/magic-graphics and put it in my Claude skills folder so that the file `~/.claude/skills/magic-graphics/SKILL.md` exists. Then make me a quick sample clip so I know it's working.**
 
 That's it. Claude downloads everything from GitHub, installs it, and makes you a clip to prove
 it works. Start a new chat afterward and say "make me some b-roll for my video."
 
-Prefer to do it yourself? Use one of the two manual ways below.
+Prefer to do it yourself? Manual steps below.
 
 ---
 
-There are two ways to install by hand. Pick one.
-
----
-
-## Option A - Drop in the folder (simplest, always works)
+## Do it by hand
 
 1. Find your Claude skills folder. On Mac or Linux it's:
    ```
@@ -37,28 +33,20 @@ There are two ways to install by hand. Pick one.
 
 2. Get the files from GitHub: go to https://github.com/EnergySteve/magic-graphics, click the
    green **Code** button → **Download ZIP**, and unzip it (or `git clone` it if you know how).
-   Then copy the **`magic-graphics`** folder (the one with `SKILL.md` inside it) into that
-   `skills` folder. When you're done it should look like:
+
+3. Put the files into a folder called `magic-graphics` inside your skills folder, so that
+   `SKILL.md` ends up here:
    ```
    ~/.claude/skills/magic-graphics/SKILL.md
    ~/.claude/skills/magic-graphics/assets/...
    ~/.claude/skills/magic-graphics/references/...
    ```
+   (If your unzipped folder is named something like `magic-graphics-main`, just rename it to
+   `magic-graphics`.)
 
-3. Start a **new** Claude chat (so it picks up the new skill).
+4. Start a **new** Claude chat (so it picks up the new skill).
 
 Done.
-
----
-
-## Option B - Install the packaged file
-
-This repo also includes **`magic-graphics.skill`** - the same skill, zipped into one file.
-If your version of Claude lets you install a `.skill` file directly, use that. If you're not
-sure, just use Option A above - it always works.
-
-(A `.skill` file is really a `.zip`. If you ever want to peek inside, rename it to
-`magic-graphics.zip` and unzip it - you'll see the same folder from Option A.)
 
 ---
 

@@ -56,7 +56,7 @@ Want a real video file instead? It can do that too if you're comfortable in a te
 (works in **Claude Code**, or any Claude with Skills). To install it, open Claude and paste
 this one line:
 
-> **Set up the Magic Graphics skill for me: download it from https://github.com/EnergySteve/magic-graphics and copy the `magic-graphics` folder (the one with `SKILL.md` inside) into my Claude skills folder at `~/.claude/skills/`. Then make me a quick test clip so I know it's working.**
+> **Install the Magic Graphics skill for me: download it from https://github.com/EnergySteve/magic-graphics and put it in my Claude skills folder so that the file `~/.claude/skills/magic-graphics/SKILL.md` exists. Then make me a quick sample clip so I know it's working.**
 
 Claude grabs everything and installs it for you. When it's done, start a new chat and say
 *"make me some b-roll for my video."* That's the whole setup.
@@ -78,10 +78,10 @@ Want the manual steps instead? See **[INSTALL.md](INSTALL.md)**.
 ## What's inside
 
 ```
-magic-graphics/
-├── SKILL.md                 the friendly walkthrough Claude follows
-├── assets/templates/        the 7 animation styles
-└── references/              how to get the video out + the design craft
+SKILL.md                 the friendly walkthrough Claude follows
+assets/templates/        the 7 animation styles
+references/              how to get the video out + the design craft
+examples/                finished sample clips you can open right now
 ```
 
 No dependencies. No build step. Just drop it in and talk.
