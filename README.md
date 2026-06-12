@@ -1,5 +1,7 @@
 # ✨ Magic Graphics
 
+### Animated graphics, no skills needed.
+
 **Make the cool moving-text clips you see in videos - just by talking.**
 
 You know the glowing words, the punchy titles, the dreamy backgrounds that play in people's
@@ -51,14 +53,23 @@ Want a real video file instead? It can do that too if you're comfortable in a te
 ## Install it (2 minutes)
 
 Magic Graphics is a **skill** for Claude. If you use **Claude Code** (or Claude with Skills),
-you can add it in under two minutes. Full steps are in **[INSTALL.md](INSTALL.md)**.
+you can add it in under two minutes.
 
-The short version:
+### Easiest way: just paste this into Claude
+
+After you download Magic Graphics, open Claude and paste this one line:
+
+> **Install the Magic Graphics skill I just downloaded: find the `magic-graphics` folder (the one with `SKILL.md` inside) in my Downloads, copy it into `~/.claude/skills/`, then make me a quick test clip.**
+
+Claude does the rest. Start a new chat afterward and say *"make me some b-roll for my video."*
+
+### Prefer to do it by hand?
+
 1. Copy the `magic-graphics` folder into your Claude skills folder (`~/.claude/skills/`).
 2. Start a new Claude chat and say: **"make me some b-roll for my video."**
 3. That's it - it takes over from there.
 
-(There's also a packaged `magic-graphics.skill` file in this repo if you'd rather install that way.)
+Full steps and the packaged `magic-graphics.skill` file are covered in **[INSTALL.md](INSTALL.md)**.
 
 ---
 

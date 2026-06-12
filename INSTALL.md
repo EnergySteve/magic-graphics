@@ -4,7 +4,22 @@ Magic Graphics is a **skill** for Claude. To use it you need **Claude Code**, or
 Claude that supports Skills. If you can chat with Claude in a terminal or app and it can read
 files on your computer, you're good.
 
-There are two ways to install. Pick one.
+---
+
+## Fastest way - let Claude install it for you
+
+Download Magic Graphics, then open Claude and paste this one line:
+
+> **Install the Magic Graphics skill I just downloaded: find the `magic-graphics` folder (the one with `SKILL.md` inside) in my Downloads, copy it into `~/.claude/skills/`, then make me a quick test clip.**
+
+That's it. Claude finds the folder, installs it, and makes you a clip to prove it works.
+Start a new chat afterward and say "make me some b-roll for my video."
+
+Prefer to do it yourself? Use one of the two manual ways below.
+
+---
+
+There are two ways to install by hand. Pick one.
 
 ---
 
