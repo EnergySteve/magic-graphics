@@ -50,26 +50,18 @@ Want a real video file instead? It can do that too if you're comfortable in a te
 
 ---
 
-## Install it (2 minutes)
+## Install it - paste one line into Claude
 
-Magic Graphics is a **skill** for Claude. If you use **Claude Code** (or Claude with Skills),
-you can add it in under two minutes.
+**No downloads. No setup. Nothing to figure out.** Magic Graphics is a **skill** for Claude
+(works in **Claude Code**, or any Claude with Skills). To install it, open Claude and paste
+this one line:
 
-### Easiest way: just paste this into Claude
+> **Set up the Magic Graphics skill for me: download it from https://github.com/EnergySteve/magic-graphics and copy the `magic-graphics` folder (the one with `SKILL.md` inside) into my Claude skills folder at `~/.claude/skills/`. Then make me a quick test clip so I know it's working.**
 
-After you download Magic Graphics, open Claude and paste this one line:
+Claude grabs everything and installs it for you. When it's done, start a new chat and say
+*"make me some b-roll for my video."* That's the whole setup.
 
-> **Install the Magic Graphics skill I just downloaded: find the `magic-graphics` folder (the one with `SKILL.md` inside) in my Downloads, copy it into `~/.claude/skills/`, then make me a quick test clip.**
-
-Claude does the rest. Start a new chat afterward and say *"make me some b-roll for my video."*
-
-### Prefer to do it by hand?
-
-1. Copy the `magic-graphics` folder into your Claude skills folder (`~/.claude/skills/`).
-2. Start a new Claude chat and say: **"make me some b-roll for my video."**
-3. That's it - it takes over from there.
-
-Full steps and the packaged `magic-graphics.skill` file are covered in **[INSTALL.md](INSTALL.md)**.
+Want the manual steps instead? See **[INSTALL.md](INSTALL.md)**.
 
 ---
 
@@ -98,8 +90,8 @@ No dependencies. No build step. Just drop it in and talk.
 
 ## License
 
-You get a personal license to use Magic Graphics to make graphics for your own content,
-including content you post or sell. Please don't resell or share the skill files themselves.
+Magic Graphics is **free to use.** Make whatever you want and use the clips anywhere -
+they're yours. Just please don't resell or rebrand the tool itself as your own.
 Full terms: **[LICENSE](LICENSE)**.
 
 ---

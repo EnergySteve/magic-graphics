@@ -6,14 +6,14 @@ files on your computer, you're good.
 
 ---
 
-## Fastest way - let Claude install it for you
+## Fastest way - paste one line, download nothing
 
-Download Magic Graphics, then open Claude and paste this one line:
+Open Claude and paste this:
 
-> **Install the Magic Graphics skill I just downloaded: find the `magic-graphics` folder (the one with `SKILL.md` inside) in my Downloads, copy it into `~/.claude/skills/`, then make me a quick test clip.**
+> **Set up the Magic Graphics skill for me: download it from https://github.com/EnergySteve/magic-graphics and copy the `magic-graphics` folder (the one with `SKILL.md` inside) into my Claude skills folder at `~/.claude/skills/`. Then make me a quick test clip so I know it's working.**
 
-That's it. Claude finds the folder, installs it, and makes you a clip to prove it works.
-Start a new chat afterward and say "make me some b-roll for my video."
+That's it. Claude downloads everything from GitHub, installs it, and makes you a clip to prove
+it works. Start a new chat afterward and say "make me some b-roll for my video."
 
 Prefer to do it yourself? Use one of the two manual ways below.
 
@@ -35,8 +35,10 @@ There are two ways to install by hand. Pick one.
    ```
    If the `skills` folder isn't there yet, just create it.
 
-2. Copy the **`magic-graphics`** folder (the one with `SKILL.md` inside it) from this download
-   into that `skills` folder. When you're done it should look like:
+2. Get the files from GitHub: go to https://github.com/EnergySteve/magic-graphics, click the
+   green **Code** button → **Download ZIP**, and unzip it (or `git clone` it if you know how).
+   Then copy the **`magic-graphics`** folder (the one with `SKILL.md` inside it) into that
+   `skills` folder. When you're done it should look like:
    ```
    ~/.claude/skills/magic-graphics/SKILL.md
    ~/.claude/skills/magic-graphics/assets/...
